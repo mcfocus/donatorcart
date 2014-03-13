@@ -23,14 +23,16 @@ public class MainActivity extends Activity implements OnClickListener {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		
+		super.onCreate(savedInstanceState);
+		setContentView(R.layout.activity_main);
+		
 		scanBtn = (Button)findViewById(R.id.scan_button);
 		formatTxt = (TextView)findViewById(R.id.scan_format);
 		contentTxt = (TextView)findViewById(R.id.scan_content);
 		
 		scanBtn.setOnClickListener(this);
 		
-		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_main);
+
 	}
 
 	@Override
