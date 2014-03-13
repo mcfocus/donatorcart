@@ -17,7 +17,8 @@ import com.google.zxing.integration.android.IntentResult;
 public class MainActivity extends Activity implements OnClickListener {
 
 	private Button scanBtn;
-	private TextView formatTxt, contentTxt;
+	private TextView formatTxt;
+	private TextView contentTxt;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
