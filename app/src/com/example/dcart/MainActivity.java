@@ -19,6 +19,7 @@ public class MainActivity extends Activity implements OnClickListener {
 	private Button scanBtn;
 	private TextView formatTxt;
 	private TextView contentTxt;
+	private TextView messageTxt;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -29,6 +30,7 @@ public class MainActivity extends Activity implements OnClickListener {
 		scanBtn = (Button)findViewById(R.id.scan_button);
 		formatTxt = (TextView)findViewById(R.id.scan_format);
 		contentTxt = (TextView)findViewById(R.id.scan_content);
+		messageTxt = (TextView)findViewById(R.id.scan_message); 
 		
 		scanBtn.setOnClickListener(this);
 		
@@ -59,8 +61,26 @@ public class MainActivity extends Activity implements OnClickListener {
 			//show scan results
 			String scanContent = scanningResult.getContents();
 			String scanFormat = scanningResult.getFormatName();
-			formatTxt.setText("FORMAT: " + scanFormat);
-			contentTxt.setText("CONTENT: " + scanContent);
+			//formatTxt.setText("FORMAT: " + scanFormat);
+			contentTxt.setText("BARCODE NUMBER: " + scanContent);
+			//messageTxt.setText("Hello");
+			if (scanContent.equals("00502610")) {
+				messageTxt.setText("These Garbanzo beans can feed 2 people. \nPrice: $1.99");
+			}
+			if (scanContent.equals("00504485")) {
+				messageTxt.setText("These oats can supply multiple meals. \nPrice: $3.99");
+			}
+			if (scanContent.equals("00508476")) {
+				messageTxt.setText("This can of black bean soup is a great donation item " +
+						"because you can eat it straight out of the can.  \nPrice: $1.99");
+			}
+			if (scanContent.equals("026000003049")) {
+				messageTxt.setText("This item is not edible. But you can " +
+						"donate it to the local school supply bin! " +
+						"  \nPrice: $1.99");
+			}
+			
+
 		}
 		else {
 			Toast toast = Toast.makeText(getApplicationContext(), 
