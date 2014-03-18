@@ -36,6 +36,9 @@ public class MainActivity extends Activity implements OnClickListener {
 	private TextView formatTxt;
 	private TextView contentTxt;
 	private TextView messageTxt;
+	private double counter = 0.0;
+	private double percent;
+	private String dataSent;
 	
 	private static final String TAG = "bluetooth1";
 	
@@ -70,8 +73,11 @@ public class MainActivity extends Activity implements OnClickListener {
 		
 	    donateBtn.setOnClickListener(new OnClickListener() {
 	        public void onClick(View v) {
-	          sendData("1");
-	          Toast.makeText(getBaseContext(), "Turn on LED", Toast.LENGTH_SHORT).show();
+	        	//counter += 1;
+	        	//percent = (counter * 0.1) ;
+	        	//dataSent = Double.toString(counter);
+	        	sendData("hello");
+	        	Toast.makeText(getBaseContext(), "Turn on LED", Toast.LENGTH_SHORT).show();
 	        }
 	      });
 		
@@ -159,7 +165,7 @@ public class MainActivity extends Activity implements OnClickListener {
 	    //     UUID for SPP.
 	   
 		try {
-			btSocket = createBluetoothSocket(device);
+			btSocket = device.createRfcommSocketToServiceRecord(MY_UUID);
 		} catch (IOException e1) {
 			errorExit("Fatal Error", "In onResume() and socket create failed: " + e1.getMessage() + ".");
 		}
