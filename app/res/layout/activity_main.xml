@@ -3,15 +3,24 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent" >
     
-	<Button
-	    android:id="@+id/scan_button"
-	    android:layout_width="wrap_content"
+    
+    <ImageView 
+       	android:id="@+id/logo"
+       	android:layout_width="wrap_content"
 	    android:layout_height="wrap_content"
 	    android:layout_alignParentTop="true"
 	    android:layout_centerHorizontal="true"
-	    android:layout_marginTop="90dp"
+	    android:src="@drawable/logo"
+        />
+    
+    <Button
+	    android:id="@+id/scan_button"
+	    android:layout_width="wrap_content"
+	    android:layout_height="wrap_content"
+	    android:layout_alignParentLeft="true"
+	    android:layout_below="@id/logo"
+	    android:layout_marginTop="31dp"
 	    android:background="@drawable/scanimg" />
-	
 
 	   
 	 <TextView
@@ -46,6 +55,8 @@
 	    android:layout_centerVertical="true"
 	    android:layout_below="@id/scan_message"
 	    android:background="@drawable/donateimg" />
+
+
 
 </RelativeLayout>
 
