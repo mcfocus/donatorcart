@@ -82,7 +82,7 @@ public class MainActivity extends Activity implements OnClickListener {
 	        	if ((lastBarcode.equals("00502610") || lastBarcode.equals("00504485") || lastBarcode.equals("00508476"))) {
 	        		sendData("1");
 	        		Toast.makeText(getBaseContext(), "Turn on LED", Toast.LENGTH_SHORT).show();
-	        	} else {
+	        	} else if (lastBarcode.equals("026000003049")) {
 	        		sendData("0");
 	        		Toast.makeText(getBaseContext(), "This item isn't edible!", Toast.LENGTH_LONG).show();
 	        	}
