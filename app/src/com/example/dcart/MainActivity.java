@@ -84,6 +84,7 @@ public class MainActivity extends Activity implements OnClickListener {
 	        		Toast.makeText(getBaseContext(), "Turn on LED", Toast.LENGTH_SHORT).show();
 	        	} else {
 	        		sendData("0");
+	        		Toast.makeText(getBaseContext(), "This item isn't edible!", Toast.LENGTH_LONG).show();
 	        	}
 	        }});
 		
