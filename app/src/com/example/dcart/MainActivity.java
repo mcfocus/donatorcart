@@ -52,6 +52,9 @@ public class MainActivity extends Activity implements OnClickListener {
 	// MAC-address of Bluetooth module (arduino)
 	private static String address = "00:06:66:01:5E:DB";
 	
+	// previous scanned barcode
+	private String lastBarcode;
+	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		
@@ -76,10 +79,13 @@ public class MainActivity extends Activity implements OnClickListener {
 	        	//counter += 1;
 	        	//percent = (counter * 0.1) ;
 	        	//dataSent = Double.toString(counter);
-	        	sendData("hello");
-	        	Toast.makeText(getBaseContext(), "Turn on LED", Toast.LENGTH_SHORT).show();
-	        }
-	      });
+	        	if ((lastBarcode.equals("00502610") || lastBarcode.equals("00504485") || lastBarcode.equals("00508476"))) {
+	        		sendData("1");
+	        		Toast.makeText(getBaseContext(), "Turn on LED", Toast.LENGTH_SHORT).show();
+	        	} else {
+	        		sendData("0");
+	        	}
+	        }});
 		
 
 	}
@@ -108,6 +114,11 @@ public class MainActivity extends Activity implements OnClickListener {
 			//show scan results
 			String scanContent = scanningResult.getContents();
 			String scanFormat = scanningResult.getFormatName();
+			
+			// set lastBarcode as the barcode of what was just scanned
+			lastBarcode = scanContent;
+			
+			
 			//formatTxt.setText("FORMAT: " + scanFormat);
 			contentTxt.setText("BARCODE NUMBER: " + scanContent);
 			//messageTxt.setText("Hello");
