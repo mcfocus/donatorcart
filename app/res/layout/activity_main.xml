@@ -9,8 +9,10 @@
 	    android:layout_height="wrap_content"
 	    android:layout_alignParentTop="true"
 	    android:layout_centerHorizontal="true"
-	    android:layout_marginTop="88dp"
-	    android:text="@string/scan" />
+	    android:layout_marginTop="90dp"
+	    android:background="@drawable/scanimg" />
+	
+
 	   
 	 <TextView
 	    android:id="@+id/scan_format"
@@ -43,7 +45,7 @@
 	    android:layout_centerHorizontal="true"
 	    android:layout_centerVertical="true"
 	    android:layout_below="@id/scan_message"
-	    android:text="@string/donate" />
+	    android:background="@drawable/donateimg" />
 
 </RelativeLayout>
 
